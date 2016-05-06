@@ -1,7 +1,8 @@
-# RehabStudio Tech Exercise - Fix the Looking Glass
-__Current Idea:__ Alice in Wonderland theme, Player must fix the 'Looking Glass' by putting the mirror sharps back to show an image of wonderland.
+# RehabStudio Tech Exercise - Alice Broke the Looking Glass
+__Current Idea:__ Alice in Wonderland theme, Player must fix the 'Looking Glass' by putting the mirror shards back to show an image of wonderland.
 
 This deviates from the original Alice in wonderland novel by which the environment shown in the looking glass is not Alice's home.
+
 ##Task:
 You must develop a simple jigsaw puzzle game using JavaScript, CSS3 and HTML5. The game should be a single-page application, with two sections/views:
 The first section (homepage) should contain a summary of how to play the game, with a button to begin playing.
