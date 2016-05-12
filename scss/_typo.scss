@@ -1,0 +1,20 @@
+// typo.scss
+// typography control
+
+h1 {
+	@include font-face("soria", "/fonts/soria-font.ttf");
+	font-family: "soria", serif;
+	font-size: rem(93);
+	color: $gold;
+	text-align: center;
+	&.small{
+		font-size: rem(66);
+		line-height: 0.1;
+	}
+}
+
+h2 {
+	font-size: rem(69);
+	color: $gold;
+	text-align: center;
+}

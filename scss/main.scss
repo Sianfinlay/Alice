@@ -1,4 +1,81 @@
 // main scss file
+
+/*======================
+	Variables
+======================*/
+//color scheme
+$gold: #D0B17D;
+$blue: #4F63A9;
+$pink: #F2AFBC;
+$black: #4A4A4A;
+
+/*======================
+	Imports
+======================*/
 @import "../bourbon/bourbon";
 @import "../neat/neat";
 @import "menu";
+@import "typo";
+
+
+*{
+	font-family: 'PT Serif', serif;
+	font-size: rem(18);
+	font-weight:normal;
+	-webkit-font-smoothing: antialiased;
+	color: $black;
+	margin: 0;
+	padding: 0;
+}
+header.main-head {
+	position: fixed;
+}
+section.welcome {
+	background-color: $blue;
+	border: solid $pink rem(14px);
+	header {
+		@include outer-container();
+		section{
+			background-image: url(../images/aliceBack.svg);
+			background-repeat: no-repeat;
+			background-position: center; 
+			@include span-columns(8);
+			@include shift(2);
+			padding: rem(99) 0;
+			img {
+				width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			div.mainBtns {
+				@include span-columns(4 of 8);
+				@include shift(2 of 8);
+				margin-top: rem(25);
+				a{	
+					display: block;
+					margin: 0 auto;
+					font-size: rem(36);
+					text-align: center;
+					text-decoration: none;
+					color: #fff;
+					background-color: $gold;
+					&:last-child {
+						margin-top: rem(15); 
+						color: $gold;
+						background-color: transparent;
+						border: solid $gold rem(2);
+					}
+				}
+			}
+		}
+
+	}
+}
+section.howTo {
+	@include outer-container();
+	padding: rem(60) 0;
+	article {
+		@include span-columns(6);
+		@include shift(3);
+	}
+}

@@ -1,125 +1,160 @@
+/*======================
+	Variables
+======================*/
+/*======================
+	Imports
+======================*/
 html {
   box-sizing: border-box; }
 
 *, *::after, *::before {
   box-sizing: inherit; }
 
-/* Overlay style */
 .overlay {
+  height: 100%;
+  width: 0%;
   position: fixed;
-  width: 100%;
-  height: 100%;
+  z-index: 1;
   top: 0;
-  left: 0;
-  background: rgba(153, 204, 51, 0.9); }
-
-/* Overlay closing cross */
-.overlay .overlay-close {
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  overflow: hidden;
-  border: none;
-  background: url(../img/cross.png) no-repeat center center;
-  text-indent: 200%;
-  color: transparent;
-  outline: none;
-  z-index: 100; }
-
-/* Menu style */
-.overlay nav {
-  text-align: center;
-  position: relative;
-  top: 50%;
-  height: 60%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%); }
-
-.overlay ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: inline-block;
-  height: 100%;
-  position: relative; }
-
-.overlay ul li {
-  display: block;
-  height: 20%;
-  height: calc(100% / 5);
-  min-height: 54px;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden; }
-
-.overlay ul li a {
-  font-size: 54px;
-  font-weight: 300;
-  display: block;
-  color: #fff;
-  -webkit-transition: color 0.2s;
-  transition: color 0.2s; }
-
-.overlay ul li a:hover,
-.overlay ul li a:focus {
-  color: #f0f0f0; }
-
-/* Effects */
-html, body {
-  overflow-x: hidden; }
-
-.container {
+  right: 0;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
   overflow-x: hidden;
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: transform 0.5s; }
+  transition: 0.6s ease-in-out; }
 
-.container.overlay-open {
-  -webkit-transform: translateX(50%);
-  transform: translateX(50%); }
-
-.container::after {
-  content: '';
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
+.overlay-content {
+  position: relative;
+  top: 25%;
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
-  transition: opacity 0.5s, visibility 0s 0.5s; }
+  text-align: center;
+  margin-top: 30px; }
 
-.container.overlay-open::after {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s; }
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s; }
 
-.overlay-contentpush {
-  background: #99cc33;
-  visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-  -webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s;
-  transition: transform 0.5s, visibility 0s 0.5s; }
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1; }
 
-.overlay-contentpush.open {
-  visibility: visible;
-  -webkit-transform: translateX(0%);
-  transform: translateX(0%);
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: transform 0.5s; }
+.closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px !important; }
 
-@media screen and (max-height: 30.5em) {
-  .overlay nav {
-    height: 70%;
-    font-size: 34px; }
+@media screen and (max-height: 450px) {
+  .overlay {
+    overflow-y: auto; }
 
-  .overlay ul li {
-    min-height: 34px; } }
+  .overlay a {
+    font-size: 20px; }
+
+  .closebtn {
+    font-size: 40px !important;
+    top: 15px;
+    right: 35px; } }
+h1 {
+  font-family: "soria", serif;
+  font-size: 5.8125rem;
+  color: #D0B17D;
+  text-align: center; }
+@font-face {
+  h1 {
+    font-family: "soria";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/fonts/soria-font.ttf.eot?#iefix") format("embedded-opentype"), url("/fonts/soria-font.ttf.woff2") format("woff2"), url("/fonts/soria-font.ttf.woff") format("woff"), url("/fonts/soria-font.ttf.ttf") format("truetype"), url("/fonts/soria-font.ttf.svg#soria") format("svg"); } }
+  h1.small {
+    font-size: 4.125rem;
+    line-height: 0.1; }
+
+h2 {
+  font-size: 4.3125rem;
+  color: #D0B17D;
+  text-align: center; }
+
+* {
+  font-family: 'PT Serif', serif;
+  font-size: 1.125rem;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  color: #4A4A4A;
+  margin: 0;
+  padding: 0; }
+
+header.main-head {
+  position: fixed; }
+
+section.welcome {
+  background-color: #4F63A9;
+  border: solid #F2AFBC 0.875rem; }
+  section.welcome header {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto; }
+    section.welcome header::after {
+      clear: both;
+      content: "";
+      display: table; }
+    section.welcome header section {
+      background-image: url(../images/aliceBack.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%;
+      margin-left: 17.05961%;
+      padding: 6.1875rem 0; }
+      section.welcome header section:last-child {
+        margin-right: 0; }
+      section.welcome header section img {
+        width: 100%;
+        display: block;
+        margin: 0 auto; }
+      section.welcome header section div.mainBtns {
+        float: left;
+        display: block;
+        margin-right: 3.57866%;
+        width: 48.21067%;
+        margin-left: 25.89467%;
+        margin-top: 1.5625rem; }
+        section.welcome header section div.mainBtns:last-child {
+          margin-right: 0; }
+        section.welcome header section div.mainBtns a {
+          display: block;
+          margin: 0 auto;
+          font-size: 2.25rem;
+          text-align: center;
+          text-decoration: none;
+          color: #fff;
+          background-color: #D0B17D; }
+          section.welcome header section div.mainBtns a:last-child {
+            margin-top: 0.9375rem;
+            color: #D0B17D;
+            background-color: transparent;
+            border: solid #D0B17D 0.125rem; }
+
+section.howTo {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3.75rem 0; }
+  section.howTo::after {
+    clear: both;
+    content: "";
+    display: table; }
+  section.howTo article {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    margin-left: 25.58941%; }
+    section.howTo article:last-child {
+      margin-right: 0; }
 
 /*# sourceMappingURL=main.css.map */
