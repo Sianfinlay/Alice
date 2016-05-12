@@ -1,0 +1,12 @@
+// grid settings
+@import "../bourbon/bourbon";
+@import "../neat/neat-helpers";
+
+$column: 60px;
+$gutter: 20px;
+$max-width: 960px;
+
+$tablet: new-breakpoint(max-width 900px 8);
+$tablet-S: new-breakpoint(max-width 800px 8);
+$mobile: new-breakpoint(max-width 600px 8);
+$mobile-S: new-breakpoint(max-width 400px 8);

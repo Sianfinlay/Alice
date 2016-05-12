@@ -1,12 +1,14 @@
-<section>
-	<div ng-if="onGame">
-	<img src="images/logo-S.svg">
+<section class="navBar">
+	<div ng-if="onGame" class="logo">
+		<img src="images/logo-S.svg">
 	</div>
-	<button type="button" onclick="openNav()">menu<i class="fa fa-bars" aria-hidden="true"></i></button>
+	<div class="menuBtn">
+		<button type="button" onclick="openNav()">menu<img src="images/menu.svg"></button>
+	</div>
 </section>
 
 <section id="myNav" class="overlay">
-	<button type="button" class="closebtn" href="javascript:void(0)" onclick="closeNav()">X</button>
+	<button type="button" class="closebtn" href="javascript:void(0)" onclick="closeNav()"><img src="images/cross.png"></button>
 	<nav class="overlay-content">
 		<a href="#/welcome" onclick="closeNav()">Welcome</a>
 		<a href="#/welcome#how-to" onclick="closeNav()">How To Play</a>
