@@ -4,8 +4,11 @@
 		<section class="gameClock">
 			<p>00:05</p>
 		</section>
-		<section class="game">
-			<img src="images/template.png">
+		<section class="game" ng-if="includeDesktopTemplate">
+			<img src="images/template.png" >
+		</section>
+		<section class="game" ng-if="includeMobileTemplate">
+			<img src="images/template2.png">
 		</section>
 		
 	</section>

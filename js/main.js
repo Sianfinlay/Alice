@@ -1,6 +1,8 @@
 //main.js
 var app = angular.module('aliceApp', ['ngRoute']);
 
+
+
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
       when('/welcome', {
@@ -15,9 +17,20 @@ app.config(['$routeProvider', function($routeProvider) {
         redirectTo: '/welcome'
       })
   }]).
-  controller('routeController', ['$scope', '$location', function($scope, $location) {
+  controller('routeController', ['$scope', '$location', '$window', function($scope, $location, $window) {
     $scope.onGame = $location.path() === '/game';
     $scope.onWelcome = $location.path() === '/welcome';
     $('.scroll').smoothScroll();
+
+
+    $scope.includeDesktopTemplate = false;
+    $scope.includeMobileTemplate = false; 
+    var screenWidth = $window.innerWidth;
+
+    if (screenWidth < 700){
+        $scope.includeMobileTemplate = true;
+    }else{
+        $scope.includeDesktopTemplate = true;
+    }
   }]);
 
