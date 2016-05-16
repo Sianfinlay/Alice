@@ -5,12 +5,14 @@
 			<p>00:05</p>
 		</section>
 		<section class="game" ng-if="includeDesktopTemplate">
-			<img src="images/template.png" >
+			<div id="gameDesktop"></div>
+			<script type="text/javascript-lazy" src="js/game.js"></script>
 		</section>
 		<section class="game" ng-if="includeMobileTemplate">
 			<img src="images/template2.png">
 		</section>
 		
 	</section>
+	
 	<footer ng-include="'templates/footer.html'"></footer>	
 </section>

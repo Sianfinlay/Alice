@@ -355,7 +355,7 @@ section.gameBack {
       margin-right: 2.12766%;
       width: 48.93617%;
       margin-left: 25.53191%;
-      padding-bottom: 40px; }
+      padding-bottom: 0.9375rem; }
       section.gameBack section.gameContainer section.gameClock:last-child {
         margin-right: 0; }
       section.gameBack section.gameContainer section.gameClock p {
@@ -363,12 +363,9 @@ section.gameBack {
         color: #D0B17D;
         font-size: 1.5rem; }
     section.gameBack section.gameContainer section.game {
-      float: left;
-      display: block;
-      margin-right: 2.12766%;
-      width: 100%; }
-      section.gameBack section.gameContainer section.game:last-child {
-        margin-right: 0; }
+      margin: 0 auto;
+      height: 500px;
+      display: table; }
       section.gameBack section.gameContainer section.game img {
         display: block;
         margin: 0 auto; }

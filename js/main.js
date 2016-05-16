@@ -1,5 +1,5 @@
 //main.js
-var app = angular.module('aliceApp', ['ngRoute']);
+var app = angular.module('aliceApp', ['ngRoute', 'ngLoadScript']);
 
 
 
@@ -33,4 +33,3 @@ app.config(['$routeProvider', function($routeProvider) {
         $scope.includeDesktopTemplate = true;
     }
   }]);
-
