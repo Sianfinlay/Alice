@@ -1,15 +1,16 @@
 <header ng-include="'templates/header.html'" class="main-head"></header>
 <section class="gameBack">
 	<section class="gameContainer">
-		<section class="gameClock">
+		<!--<section class="gameClock">
 			<p>00:05</p>
-		</section>
+		</section>-->
 		<section class="game" ng-if="includeDesktopTemplate">
 			<div id="gameDesktop"></div>
 			<script type="text/javascript-lazy" src="js/game.js"></script>
 		</section>
 		<section class="game" ng-if="includeMobileTemplate">
-			<img src="images/template2.png">
+			<div id="gameMobile"></div>
+			<script type="text/javascript-lazy" src="js/game-mobile.js"></script>
 		</section>
 		
 	</section>

@@ -9,4 +9,5 @@ $max-width: 960px;
 $tablet: new-breakpoint(max-width 900px 8);
 $tablet-S: new-breakpoint(max-width 800px 8);
 $mobile: new-breakpoint(max-width 600px 8);
+$game-break: new-breakpoint(max-width 569px 8);
 $mobile-S: new-breakpoint(max-width 400px 8);

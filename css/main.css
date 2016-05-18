@@ -14,7 +14,7 @@ html {
   height: 100%;
   width: 0%;
   position: fixed;
-  z-index: 10;
+  z-index: 1000;
   top: 0;
   right: 0;
   background-color: white;
@@ -344,7 +344,7 @@ section.gameBack {
     margin-right: auto;
     height: 26.875rem;
     height: 85vh;
-    margin-top: 20px; }
+    padding-top: 80px; }
     section.gameBack section.gameContainer::after {
       clear: both;
       content: "";
@@ -364,17 +364,20 @@ section.gameBack {
         font-size: 1.5rem; }
     section.gameBack section.gameContainer section.game {
       margin: 0 auto;
-      height: 500px;
+      height: 400px;
       display: table; }
-      section.gameBack section.gameContainer section.game img {
-        display: block;
-        margin: 0 auto; }
+      @media screen and (max-width: 569px) {
+        section.gameBack section.gameContainer section.game {
+          height: 300px; } }
+    @media screen and (max-width: 569px) {
+      section.gameBack section.gameContainer {
+        padding-top: 100px; } }
 
 footer {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0rem 0.625rem 0.625rem 0.625rem;
+  padding: 0rem 0.625rem 1.25rem 0.625rem;
   height: auto; }
   footer::after {
     clear: both;
@@ -396,7 +399,7 @@ footer {
     display: block;
     margin-right: 2.12766%;
     width: 65.95745%;
-    height: 20px; }
+    height: 15px; }
     footer section div:last-child {
       margin-right: 0; }
     footer section div:last-child {

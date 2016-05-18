@@ -27,7 +27,7 @@ app.config(['$routeProvider', function($routeProvider) {
     $scope.includeMobileTemplate = false; 
     var screenWidth = $window.innerWidth;
 
-    if (screenWidth < 700){
+    if (screenWidth < 569){
         $scope.includeMobileTemplate = true;
     }else{
         $scope.includeDesktopTemplate = true;

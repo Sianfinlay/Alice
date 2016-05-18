@@ -75,7 +75,7 @@ function initStage(images) { //using image object created in the loadImages func
 			y: 150
 		},
 		piece_5: {
-			x: 445,
+			x: 435,
 			y: 0
 		},
 		piece_6: {
@@ -175,6 +175,7 @@ function initStage(images) { //using image object created in the loadImages func
 								// this maybe be more if a piece than was moved from right spot
 								if(puzzleShapes.length == 8){ // array matches the max number of puzzle pieces
 									console.log("working..."); // test that this if statement has worked
+									// add modal success 
 								}
 	                            puzzleLayer.draw();// draw pieces again
 	                        }, 50);
@@ -194,30 +195,34 @@ function initStage(images) { //using image object created in the loadImages func
 			// mouse events
 			// make piece glow on mouseover
             piece.on('mouseover', function() {
-                piece.image(images[currentPiece + '_glow']);
-                puzzleLayer.draw();
-                document.body.style.cursor = 'pointer';
+            	piece.cache(); // cache image for filter use
+                piece.filters([Konva.Filters.Brighten]); // get the brightness filter for use
+				piece.brightness(0.3); // up the brightness by '30%'
+                puzzleLayer.draw(); // draw pieces again
+                document.body.style.cursor = 'pointer'; // change mouse to the pointer to show that the piece can be dragged
             });
-            // return code on mouseout
+            // return piece original brightness on mouseout
             piece.on('mouseout', function() {
-                piece.image(images[currentPiece]);
-                puzzleLayer.draw();
-                document.body.style.cursor = 'default';
+                piece.cache(); // cache image for filter use
+                piece.filters([Konva.Filters.Brighten]); // get the brightness filter for use
+				piece.brightness(0); // change brightness back to zero
+                puzzleLayer.draw(); // draw pieces again
+                document.body.style.cursor = 'default'; // change mouse to the default
             });
-
+            // change cursor
             piece.on('dragmove', function() {
-                document.body.style.cursor = 'pointer';
+                document.body.style.cursor = 'pointer'; // keep mouse as a pointer when draggin
             });
 
 		})(); 
 	}
-	stage.add(background);
-    stage.add(puzzleLayer);
-	drawBack(background, images.background);
+	stage.add(background); // add background
+    stage.add(puzzleLayer); // add puzzle pieces and outlines
+	drawBack(background, images.background); // draw background after the layer is added
 }
 
-var sources = {
-	background: 'frame_test.png',
+var sources = { // get img src from 'assets/'
+	background: 'frame.png',
 	piece_1: 'piece1.png',
 	piece_2: 'piece2.png',
 	piece_3: 'piece3.png',
@@ -236,6 +241,6 @@ var sources = {
 	piece_8_outline: 'piece8_outline.png'
 }
 
-loadImages(sources, initStage);
+loadImages(sources, initStage); // load images and stage
 
 
