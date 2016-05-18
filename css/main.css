@@ -17,8 +17,7 @@ html {
   z-index: 1000;
   top: 0;
   right: 0;
-  background-color: white;
-  background-color: white;
+  background-color: #fff;
   overflow-x: hidden;
   transition: 0.6s ease-in-out; }
 
@@ -27,7 +26,10 @@ html {
   top: 25%;
   width: 100%;
   text-align: center;
-  margin-top: 1.875rem; }
+  margin-top: 1.875rem;
+  background-color: transparent;
+  line-height: 1;
+  box-shadow: none; }
 
 .overlay a {
   padding: 0.5rem;
@@ -47,11 +49,17 @@ html {
   top: 20px;
   right: 45px; }
   .closebtn:hover {
-    -webkit-filter: sepia(0.9);
-    filter: sepia(0.9); }
+    background: #fff;
+    box-shadow: none; }
+    .closebtn:hover img {
+      -webkit-filter: sepia(0.9);
+      filter: sepia(0.9); }
   .closebtn:active {
-    -webkit-filter: brightness(0.7);
-    filter: brightness(0.7); }
+    background: #fff;
+    box-shadow: none; }
+    .closebtn:active img {
+      -webkit-filter: brightness(0.7);
+      filter: brightness(0.7); }
 
 @media screen and (max-height: 450px) {
   .overlay {
@@ -71,8 +79,9 @@ p {
       text-align: left; } }
 
 h1 {
+  margin: 0;
   font-family: "soria", serif;
-  font-size: 5.8125rem;
+  font-size: 5.8125rem !important;
   color: #D0B17D;
   text-align: center; }
 @font-face {
@@ -83,29 +92,42 @@ h1 {
     src: url("/fonts/soria-font.ttf.eot?#iefix") format("embedded-opentype"), url("/fonts/soria-font.ttf.woff2") format("woff2"), url("/fonts/soria-font.ttf.woff") format("woff"), url("/fonts/soria-font.ttf.ttf") format("truetype"), url("/fonts/soria-font.ttf.svg#soria") format("svg"); } }
   @media screen and (max-width: 600px) {
     h1 {
-      font-size: 3rem; } }
+      font-size: 3rem !important; } }
   h1.small {
-    font-size: 4.125rem;
+    font-size: 4.125rem !important;
     line-height: 0.1; }
     @media screen and (max-width: 600px) {
       h1.small {
-        font-size: 2.25rem; } }
+        font-size: 2.25rem !important; } }
 
 h2 {
-  font-size: 4.3125rem;
+  font-size: 4.3125rem !important;
   color: #D0B17D;
   text-align: center;
   text-transform: capitalize; }
   @media screen and (max-width: 600px) {
     h2 {
-      font-size: 3rem; } }
+      font-size: 3rem !important; } }
   @media screen and (max-width: 400px) {
     h2 {
-      font-size: 2.25rem; } }
+      font-size: 2.25rem !important; } }
+
+h3 {
+  font-size: 3.75rem !important;
+  color: #D0B17D;
+  text-align: center;
+  text-transform: capitalize; }
+  @media screen and (max-width: 600px) {
+    h3 {
+      font-size: 3rem !important; } }
+  @media screen and (max-width: 400px) {
+    h3 {
+      font-size: 2.25rem !important; } }
 
 small {
-  font-size: 0.875rem;
-  color: #D0B17D; }
+  font-size: 0.875rem !important;
+  color: #D0B17D;
+  line-height: 1 !important; }
   @media screen and (max-width: 800px) {
     small {
       font-size: 0.625rem; } }
@@ -226,6 +248,7 @@ section.welcome {
         margin-right: 0; }
       @media screen and (max-width: 900px) {
         section.welcome header section {
+          padding: 6.25rem 0;
           float: left;
           display: block;
           margin-right: 3.22581%;
@@ -235,6 +258,7 @@ section.welcome {
             margin-right: 0; } }
       @media screen and (max-width: 600px) {
         section.welcome header section {
+          padding: 12.5rem 0;
           float: left;
           display: block;
           margin-right: 3.22581%;
@@ -372,18 +396,85 @@ section.gameBack {
     @media screen and (max-width: 569px) {
       section.gameBack section.gameContainer {
         padding-top: 100px; } }
+    section.gameBack section.gameContainer section.modal {
+      border: #D0B17D 4px solid; }
+      section.gameBack section.gameContainer section.modal div.modal-content div.successBtns {
+        float: left;
+        display: block;
+        margin-right: 3.22581%;
+        width: 48.3871%;
+        margin-left: 25.80645%;
+        margin-top: 1.5625rem;
+        margin-bottom: 1.5625rem; }
+        section.gameBack section.gameContainer section.modal div.modal-content div.successBtns:last-child {
+          margin-right: 0; }
+        section.gameBack section.gameContainer section.modal div.modal-content div.successBtns a {
+          display: block;
+          margin: 0 auto;
+          padding: 0.625rem 0;
+          font-size: 2.25rem;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: #fff;
+          background-color: #D0B17D;
+          border-radius: 0.3125rem;
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out; }
+          section.gameBack section.gameContainer section.modal div.modal-content div.successBtns a:hover {
+            background-color: #dcc59e; }
+          section.gameBack section.gameContainer section.modal div.modal-content div.successBtns a:active {
+            background-color: #9c855e; }
+          section.gameBack section.gameContainer section.modal div.modal-content div.successBtns a:last-child {
+            margin-top: 0.9375rem;
+            color: #D0B17D;
+            background-color: transparent;
+            border: solid #D0B17D 0.125rem; }
+            section.gameBack section.gameContainer section.modal div.modal-content div.successBtns a:last-child:hover {
+              border-color: #dcc59e;
+              color: #dcc59e; }
+            section.gameBack section.gameContainer section.modal div.modal-content div.successBtns a:last-child:active {
+              border-color: #9c855e;
+              color: #9c855e; }
+          @media screen and (max-width: 710px) {
+            section.gameBack section.gameContainer section.modal div.modal-content div.successBtns a {
+              font-size: 1.5625rem; } }
+          @media screen and (max-width: 600px) {
+            section.gameBack section.gameContainer section.modal div.modal-content div.successBtns a {
+              font-size: 1.125rem; } }
+        @media screen and (max-width: 900px) {
+          section.gameBack section.gameContainer section.modal div.modal-content div.successBtns {
+            float: left;
+            display: block;
+            margin-right: 3.22581%;
+            width: 48.3871%;
+            margin-left: 25.80645%; }
+            section.gameBack section.gameContainer section.modal div.modal-content div.successBtns:last-child {
+              margin-right: 0; } }
+        @media screen and (max-width: 600px) {
+          section.gameBack section.gameContainer section.modal div.modal-content div.successBtns {
+            float: left;
+            display: block;
+            margin-right: 3.22581%;
+            width: 74.19355%;
+            margin-left: 12.90323%;
+            margin-top: 3.75rem; }
+            section.gameBack section.gameContainer section.modal div.modal-content div.successBtns:last-child {
+              margin-right: 0; } }
 
 footer {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   padding: 0rem 0.625rem 1.25rem 0.625rem;
-  height: auto; }
+  height: auto;
+  margin-bottom: 1.875rem; }
   footer::after {
     clear: both;
     content: "";
     display: table; }
-  footer section div.divider {
+  footer div.divider {
     float: left;
     display: block;
     margin-right: 2.12766%;
@@ -392,14 +483,14 @@ footer {
     background-color: #D0B17D;
     -webkit-box-shadow: 0 -5px 0 #D0B17D;
     box-shadow: 0 -5px 0 #D0B17D; }
-    footer section div.divider:last-child {
+    footer div.divider:last-child {
       margin-right: 0; }
   footer section div {
     float: left;
     display: block;
     margin-right: 2.12766%;
     width: 65.95745%;
-    height: 15px; }
+    height: auto; }
     footer section div:last-child {
       margin-right: 0; }
     footer section div:last-child {

@@ -8,40 +8,54 @@ p {
 }
 h1 {
 	@include font-face("soria", "/fonts/soria-font.ttf");
+	margin: 0;
 	font-family: "soria", serif;
-	font-size: rem(93);
+	font-size: rem(93)!important;
 	color: $gold;
 	text-align: center;
 	@include media($mobile) {
-      font-size: rem(48);
+      font-size: rem(48)!important;
     }
 	&.small{
-		font-size: rem(66);
+		font-size: rem(66)!important;
 		line-height: 0.1;
 		@include media($mobile) {
-			font-size: rem(36);
+			font-size: rem(36)!important;
 		}
 	}
 	
 }
 
 h2 {
-	font-size: rem(69);
+	font-size: rem(69)!important;
 	color: $gold;
 	text-align: center;
 	text-transform: capitalize;
 	@include media($mobile) {
-      font-size: rem(48);
+      font-size: rem(48)!important;
     }
     @include media($mobile-S) {
-      font-size: rem(36);
+      font-size: rem(36)!important;
     }
 
 }
+h3 {
+	font-size: rem(60)!important;
+	color: $gold;
+	text-align: center;
+	text-transform: capitalize;
+	@include media($mobile) {
+      font-size: rem(48)!important;
+    }
+    @include media($mobile-S) {
+      font-size: rem(36)!important;
+    }
+}
 
 small {
-	font-size: rem(14);
+	font-size: rem(14)!important;
 	color: $gold;
+	line-height: 1!important;
 	@include media($tablet-S) {
     	font-size: rem(10);
     }

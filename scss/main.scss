@@ -103,10 +103,12 @@ section.welcome {
 			@include shift(2);
 			padding: rem(80) 0;
 			@include media($tablet) {
+				padding: rem(100) 0;
 		      @include span-columns(8);
 		      @include shift(0);
 		    }
 		    @include media($mobile) {
+		    	padding: rem(200) 0;
 		      @include span-columns(8);
 		    }
 			div.mainBtns {
@@ -203,6 +205,62 @@ section.gameBack {
 		@include media($game-break) {
 			padding-top: 100px;	
 		}
+		section.modal {
+			border: $gold 4px solid;
+			div.modal-content {
+				div.successBtns {
+				@include span-columns(4 of 8);
+				@include shift(2 of 8);
+				margin-top: rem(25);
+				margin-bottom: rem(25);
+				a{	
+					display: block;
+					margin: 0 auto;
+					padding: rem(10) 0;
+					font-size: rem(36);
+					text-align: center;
+					text-decoration: none;
+					text-transform: uppercase;
+					color: #fff;
+					background-color: $gold;
+					border-radius: rem(5);
+					@include transition(all 0.2s ease-in-out);
+					&:hover {background-color: tint($gold, 25%);}
+					&:active {background-color: shade($gold, 25%);}
+					&:last-child {
+						margin-top: rem(15); 
+						color: $gold;
+						background-color: transparent;
+						border: solid $gold rem(2);
+						&:hover {
+							border-color: tint($gold, 25%);
+							color: tint($gold, 25%);
+						}
+						&:active {
+							border-color: shade($gold, 25%);
+							color: shade($gold, 25%);
+						}
+					}
+					@include media($success) {
+				      font-size: rem(25);
+				    }
+					@include media($mobile) {
+				      font-size: rem(18);
+				    }
+				}
+				@include media($tablet) {
+			      @include span-columns(4 of 8);
+			      @include shift(2 of 8);
+			    }
+			    @include media($mobile) {
+			    	@include span-columns(6 of 8);
+			      	@include shift(1 of 8);
+			      	margin-top: rem(60);
+			    }
+			}
+			}
+			
+		}
 		
 	}
 }
@@ -210,18 +268,19 @@ footer {
 	@include outer-container();
 	padding: rem(0) rem(10) rem(20) rem(10);
 	height: auto;
-
-	section {
-		div.divider {
+	margin-bottom: rem(30);
+	div.divider {
 			@include span-columns(12);
 			height: rem(1);
 			background-color: $gold;
 			-webkit-box-shadow: 0 -5px 0 $gold;
 			box-shadow: 0 -5px 0 $gold;
 		}
+	section {
+		
 		div {
 			@include span-columns(8);
-			height: 15px;
+			height: auto;
 			&:last-child {
 				@include span-columns(4);
 				text-align: right;

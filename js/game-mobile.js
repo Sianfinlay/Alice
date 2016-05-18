@@ -176,6 +176,12 @@ function initStage(images) { //using image object created in the loadImages func
 								// this maybe be more if a piece than was moved from right spot
 								if(puzzleShapes.length == 8){ // array matches the max number of puzzle pieces
 									console.log("working..."); // test that this if statement has worked
+									// modal success 
+									// jquery ready needed for materialise modal events to work
+									$(document).ready(function(){
+										// open materialize modal when 8 pieces are in the right place
+									    $('#modal1').openModal();
+									});
 								}
 	                            puzzleLayer.draw();// draw pieces again
 	                        }, 50);
