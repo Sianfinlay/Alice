@@ -330,7 +330,7 @@ section.howTo {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  padding: 3.75rem 0; }
+  padding: 3.75rem 0 3.125rem; }
   section.howTo::after {
     clear: both;
     content: "";

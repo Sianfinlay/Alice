@@ -163,7 +163,7 @@ section.welcome {
 }
 section.howTo {
 	@include outer-container();
-	padding: rem(60) 0;
+	padding: rem(60) 0 rem(50);
 	article {
 		@include span-columns(6);
 		@include shift(3);
